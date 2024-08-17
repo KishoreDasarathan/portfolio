@@ -15,6 +15,14 @@
 <ul><h2>SQL</h2>
   <li>paramspider -d www.example.com</li>
   <li>cat urls.txt | sed 's/FUZZ//g' > final.txt</li>
-  <li>python3 /home/redteamer/tools/sqli/lostsec.py -l final.txt -p xor.txt -t 5</li>
+  <li>python3 /home/redteamer/tools/sqli/lostsec.py -l final.txt -p /home/redteamer/tools/sqli/payloads/xor.txt -t 5</li>
 </ul>
-
+<ul><h2>CORS</h2>
+  <li>python3 /home/redteamer/tools/Corsy/corsy.py -i urls.txt -t 10</li>
+</ul>
+<ul><h2>LFI</h2>
+  <li>cat lfiurls.txt | nuclei -tags lfi</li>
+</ul>
+<ul><h2>Open Redirect</h2>
+  <li>cat allurls.txt | openredirex -p payloads.txt</li>
+</ul>
