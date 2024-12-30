@@ -1,0 +1,825 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Professional Desktop Support, CCTV Installation, and Network Support Services">
+    <title>Intelligent Infrastructure Zone</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+
+    <style>
+        /* General Styles */
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #1c1c1c;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        /* Header Section */
+        header {
+            background-color: #0066cc;
+            color: #fff;
+            padding: 60px 20px;
+            text-align: center;
+            box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+        }
+        header h1 {
+            margin: 0;
+            font-size: 3.5em;
+            font-weight: 700;
+            letter-spacing: 2px;
+        }
+        header p {
+            font-size: 1.3em;
+            font-weight: 400;
+            margin-top: 10px;
+        }
+
+        /* Navigation Bar */
+        nav {
+            display: flex;
+            justify-content: center;
+            background-color: #004d99;
+            box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        nav a {
+            color: #fff;
+            padding: 18px 25px;
+            text-decoration: none;
+            text-align: center;
+            font-size: 1.1em;
+            font-weight: 500;
+            transition: background-color 0.3s, transform 0.3s;
+            text-transform: uppercase;
+        }
+        nav a:hover {
+            background-color: #0066cc;
+            transform: scale(1.05);
+        }
+
+        /* Sections */
+        section {
+            padding: 80px 20px;
+            background-color: #ccc6c6;
+            margin-bottom: 50px;
+            border-radius: 50px;
+            box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.1);
+        }
+        section h2 {
+            font-size: 2.8em;
+            font-weight: 600;
+            text-align: center;
+            margin-bottom: 20px;
+            color: #0066cc;
+        }
+        section p {
+            font-size: 1.6em;
+            color: #555;
+            text-align: center;
+            margin-bottom: 40px;
+            line-height: 1.7;
+        }
+        /* Service Cards */
+        .services {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 30px;
+            padding: 20px;
+        }
+
+        .service-box {
+            position: relative; /* To position the overlay */
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 18px;
+            font-weight: bold;
+            text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+            background-color: #f4f4f4;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            cursor: pointer;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            overflow: hidden; /* Ensures the overlay stays inside the box */
+        }
+
+        .service-box::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black overlay */
+            z-index: 1; /* Ensure the overlay sits below the text */
+            border-radius: 10px; /* Matches the box shape */
+        }
+
+        .service-box h3, .service-box p {
+            position: relative;
+            z-index: 2; /* Ensures the text is above the overlay */
+        }
+
+        .box1 { background-image: url('dl.png'); }
+        .box2 { background-image: url('cctv.png'); }
+        .box3 {background-image: url('cs.png'); }
+        .box4 { background-image: url('network.png'); }
+        .box5 { background-image: url('acess.png'); }
+        .box6 { background-image: url('bup.png'); }
+
+        .service-box:hover {
+            transform: translateY(-10px);
+            box-shadow: 0px 8px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .service-box h3 {
+            color: #FFFFFF;
+            font-size: 1.6em;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+
+        /* Network Service Popup Button Styles */
+        .network-service-buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .network-service-btn {
+            background-color: #0066cc;
+            color: #fff;
+            font-size: 1.2em;
+            font-weight: 500;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.3s;
+            text-align: center;
+            width: 100%;
+        }
+
+        .network-service-btn:hover {
+            background-color: #005bb5;
+            transform: translateY(-3px);
+        }
+
+        .network-service-btn:active {
+            background-color: #004d99;
+            transform: translateY(1px);
+        }
+
+        .network-service-btn:focus {
+            outline: none;
+        }
+
+        /* Close button */
+        .close-btn {
+            background-color: #ff4d4d;
+            color: white;
+            padding: 12px 25px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            margin-top: 30px;
+        }
+
+        .close-btn:hover {
+            background-color: #cc0000;
+        }
+
+        /* Popup Container */
+        .sub-popup-content {
+            background-color: #fff;
+            padding: 40px;
+            border-radius: 10px;
+            max-width: 600px;
+            text-align: center;
+            box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .sub-popup-content h3 {
+            font-size: 2.2em;
+            color: #0066cc;
+            margin-bottom: 30px;
+        }
+
+
+        /* Popup Style */
+        .popup, .sub-popup {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            justify-content: center;
+            align-items: center;
+            z-index: 999;
+        }
+        .popup-content, .sub-popup-content {
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            max-width: 600px;
+            text-align: center;
+            box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+        }
+        .popup-content h3, .sub-popup-content h3 {
+            font-size: 2em;
+            color: #0066cc;
+        }
+        .popup-content p, .sub-popup-content p {
+            font-size: 1.2em;
+            color: #555;
+            margin-top: 20px;
+        }
+        .close-btn {
+            background-color: #ff4d4d;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 20px;
+            transition: background-color 0.3s;
+        }
+        .close-btn:hover {
+            background-color: #cc0000;
+        }
+
+        /* Call to Action Button */
+        .contact-btn {
+            background-color: #0066cc;
+            color: #fff;
+            padding: 18px 40px;
+            font-size: 1.2em;
+            font-weight: 500;
+            text-decoration: none;
+            display: inline-block;
+            border-radius: 5px;
+            transition: background-color 0.3s, transform 0.3s;
+            text-transform: uppercase;
+            margin-top: 30px;
+        }
+        .contact-btn:hover {
+            background-color: #004d99;
+            transform: scale(1.05);
+        }
+
+        /* Footer */
+        footer {
+            background-color: #0066cc;
+            color: #fff;
+            text-align: center;
+            padding: 25px 20px;
+            font-size: 1.1em;
+            box-shadow: 0px -4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2.8em;
+            }
+            header p {
+                font-size: 1.1em;
+            }
+            nav a {
+                font-size: 1em;
+                padding: 12px 20px;
+            }
+            section {
+                padding: 60px 20px;
+            }
+            .service {
+                padding: 20px;
+            }
+        }
+
+        /* Style for Software Solutions Section */
+        #softwares {
+            padding: 30px;
+            background-color: #ccc6c6;
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        #softwares h2 {
+            font-size: 2.5em;
+            color: #0066cc;
+            margin-bottom: 20px;
+        }
+
+        #softwares p {
+            font-size: 1.8em;
+            color: #555;
+            margin-bottom: 30px;
+        }
+
+        /* Style for the list */
+        .software-list {
+            list-style-type: none;
+            padding: 0;
+            margin-bottom: 30px;
+        }
+
+        .software-list li {
+            font-size: 1.5em;
+            color: #333;
+            padding: 10px 0;
+            border-bottom: 1px solid #ddd;
+            transition: color 0.3s ease;
+            cursor: pointer;
+        }
+
+        .software-list li:hover {
+            color: #0066cc;
+        }
+
+        .software-list li:last-child {
+            border-bottom: none;
+        }
+
+        /* Smooth Scroll Effect */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        .contact-btn {
+            display: inline-block;
+            background-color: #0073e6;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            margin-top: 10px;
+            border-radius: 5px;
+            text-align: center;
+        }
+
+        .contact-btn:hover {
+            background-color: #005bb5;
+        }
+
+        .social-icons {
+            margin-top: 20px;
+            display: flex;
+            justify-content: center; /* Centers the icons horizontally */
+            gap: 20px; /* Adds spacing between the icons */
+        }
+
+        .social-icon {
+            font-size: 30px;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .social-icon:hover {
+            color: #c13584; /* Instagram hover color */
+        }
+
+        .social-icon i {
+            display: block;
+            text-align: center;
+        }
+
+        /* Specific color styles for each social icon */
+        .social-icon.instagram {
+            color: #e4405f; /* Instagram color */
+        }
+
+        .social-icon.whatsapp {
+            color: #25d366; /* WhatsApp color */
+        }
+
+        .social-icon.email {
+            color: #0073e6; /* Email color */
+        }
+
+        /* Hover colors */
+        .social-icon.instagram:hover {
+            color: #c13584;
+        }
+
+        .social-icon.whatsapp:hover {
+            color: #128c7e;
+        }
+
+        .social-icon.email:hover {
+            color: #005bb5;
+        }
+
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>INTELLIGENT INFRASTRUCTURE ZONE</h1>
+    <p>Your One-Stop Solution for All Your IT Needs</p>
+</header>
+
+<nav>
+    <a href="#home">Home</a>
+    <a href="#services">Services</a>
+    <a href="#products">Products</a>
+    <a href="#softwares">Softwares</a>
+    <a href="#amc">AMC</a>
+    <a href="#one-stop">ONE STOP</a>
+</nav>
+
+<section id="home">
+    <h2>Welcome to Intelligent Infrastructure Zone</h2>
+    <p>Your trusted partner for technology solutions. We offer professional services in desktop support, CCTV installation, and network support to ensure that your tech runs smoothly.</p>
+</section>
+
+<section id="services">
+    <h2>Our Services</h2>
+    <p>We provide a wide range of tech support services to businesses and individuals. Our services include Desktop Support, CCTV Installation, Network Support, and more.</p>
+    <div class="services">
+        <div  class="service-box box1" onclick="showPopup('desktopSupport')">
+            <h3>Desktop & Laptop Support</h3>
+        </div>
+        <div class="service-box box2" onclick="showPopup('cctvInstallation')">
+            <h3>CCTV Installation</h3>
+        </div>
+        <!-- Cybersecurity Service Card -->
+        <div  class="service-box box3" onclick="showCyberSecurityPopup()">
+            <h3>Cybersecurity</h3>
+        </div>
+        <div  class="service-box box4" onclick="showNetworkPopup()">
+            <h3>Network Support</h3>
+        </div>
+        <!-- Access Service Card -->
+        <div  class="service-box box5" onclick="showAccessPopup()">
+            <h3>Access</h3>
+        </div>
+
+        <!-- Data Storage Backup Service Card -->
+        <div class="service-box box6" onclick="showDataStoragePopup()">
+            <h3>Data Storage Backup</h3>
+        </div>
+    </div>
+</section>
+
+<!-- Popups -->
+<div id="popup" class="popup">
+    <div class="popup-content">
+        <h3 id="popupTitle">Service Details</h3>
+        <p id="popupDescription">Service Description will appear here.</p>
+        <button class="close-btn" onclick="closePopup()">Close</button>
+    </div>
+</div>
+
+<section id="products">
+    <h2>Our Products</h2>
+    <p>Explore our range of technology products designed to help your business and home stay ahead of the curve.</p>
+</section>
+
+<section id="softwares">
+    <h2>Software Solutions</h2>
+    <p>Explore our range of software solutions for security, productivity, and more.</p>
+    
+    <!-- List of software solutions -->
+    <ul class="software-list">
+        <li>OS</li>
+        <li>Anti Virus</li>
+        <li>Endpoint Security</li>
+        <li>Firmware</li>
+        <li>Tally</li>
+        <li>Photoshop</li>
+    </ul>
+
+</section>
+<section id="amc">
+    <h2>Annual Maintenance Contracts (AMC)</h2>
+    <p>Ensure smooth, uninterrupted service with our flexible and affordable AMC packages.</p>
+</section>
+
+<section id="one-stop">
+    <h2>One Stop Solution</h2>
+    <p>We provide complete network design, planning, and execution of all network devices, ensuring compliance with the highest cybersecurity standards.</p>
+</section>
+
+<section id="contact">
+    <h2>Contact Us</h2>
+    <p>Have a question or need support? Reach out to us, and we’ll be happy to help!</p>
+    <!-- Social Media Icons -->
+    <div class="social-icons">
+        <a href="https://www.instagram.com/intelligentinfrastructure_zone" target="_blank" class="social-icon" title="Instagram">
+            <i class="fab fa-instagram"></i>
+        </a>
+        <a href="https://wa.me/9043378713?text=Hi%20I%20need%20support" target="_blank" class="social-icon" title="WhatsApp">
+            <i class="fab fa-whatsapp"></i>
+        </a>
+        <a href="mailto:intelligentinfrastructurezone@gmail.com" class="social-icon" title="Email">
+            <i class="fas fa-envelope"></i>
+        </a>
+    </div>
+</section>
+
+<!-- Network Popup with options -->
+<div id="networkPopup" class="sub-popup">
+    <div class="sub-popup-content">
+        <h3>Select a Network Service</h3>
+        <div class="network-service-buttons">
+            <button class="network-service-btn" onclick="showNetworkServiceDetails('switch')">Switch</button>
+            <button class="network-service-btn" onclick="showNetworkServiceDetails('firewall')">Firewall</button>
+            <button class="network-service-btn" onclick="showNetworkServiceDetails('ap')">WIFI Unifi AP</button>
+            <button class="network-service-btn" onclick="showNetworkServiceDetails('server')">Server</button>
+            <button class="network-service-btn" onclick="showNetworkServiceDetails('lanCable')">LAN Cable Routing</button>
+            <button class="network-service-btn" onclick="showNetworkServiceDetails('printer')">Printer</button>
+        </div>
+        <button class="close-btn" onclick="closeNetworkPopup()">Close</button>
+    </div>
+</div>
+
+<!-- Sub Popup for Network Service Details -->
+<div id="subPopup" class="sub-popup">
+    <div class="sub-popup-content">
+        <h3 id="subPopupTitle">Service Details</h3>
+        <p id="subPopupDescription">Description will be here</p>
+        <button class="close-btn" onclick="closeSubPopup()">Close</button>
+    </div>
+</div>
+
+
+<!-- Cybersecurity Popup with Background and Buttons -->
+<div id="cybersecurityPopup" class="sub-popup">
+    <div class="sub-popup-content">
+        <h3>Select a Cybersecurity Service</h3>
+        <div class="network-service-buttons">
+            <button class="network-service-btn" onclick="showCyberSecurityServiceDetails('cyber1')">Cyber Risk Assessment</button>
+            <button class="network-service-btn" onclick="showCyberSecurityServiceDetails('cyber2')">Penetration Testing</button>
+            <button class="network-service-btn" onclick="showCyberSecurityServiceDetails('cyber3')">Security Monitoring</button>
+        </div>
+        <button class="close-btn" onclick="closeCyberSecurityPopup()">Close</button>
+    </div>
+</div>
+
+<!-- Sub Popup for Cybersecurity Service Details -->
+<div id="cyber1Popup" class="sub-popup">
+    <div class="sub-popup-content">
+        <h3>Cyber Risk Assessment</h3>
+        <p>We help you identify vulnerabilities and risks in your infrastructure, ensuring robust cybersecurity strategies.</p>
+        <button class="close-btn" onclick="closeSubPopup()">Close</button>
+    </div>
+</div>
+
+<div id="cyber2Popup" class="sub-popup">
+    <div class="sub-popup-content">
+        <h3>Penetration Testing</h3>
+        <p>Our penetration testing services simulate real-world attacks to find vulnerabilities in your system.</p>
+        <button class="close-btn" onclick="closeSubPopup()">Close</button>
+    </div>
+</div>
+
+<div id="cyber3Popup" class="sub-popup">
+    <div class="sub-popup-content">
+        <h3>Security Monitoring</h3>
+        <p>Continuous monitoring to detect and respond to security threats before they become major issues.</p>
+        <button class="close-btn" onclick="closeSubPopup()">Close</button>
+    </div>
+</div>
+
+<div id="cyber4Popup" class="sub-popup">
+    <div class="sub-popup-content">
+        <h3>Incident Response</h3>
+        <p>We provide rapid incident response to contain and mitigate security breaches effectively.</p>
+        <button class="close-btn" onclick="closeSubPopup()">Close</button>
+    </div>
+</div>
+
+
+<!-- Access Popup with Background and Buttons -->
+<div id="accessPopup" class="sub-popup">
+    <div class="sub-popup-content">
+        <h3>Select an Access Service</h3>
+        <div class="network-service-buttons">
+            <button class="network-service-btn" onclick="showAccessServiceDetails('doorAccess')">Door Access</button>
+            <button class="network-service-btn" onclick="showAccessServiceDetails('bioMetric')">Bio-Metric</button>
+            <button class="network-service-btn" onclick="showAccessServiceDetails('voip')">VOIP</button>
+        </div>
+        <button class="close-btn" onclick="closeAccessPopup()">Close</button>
+    </div>
+</div>
+
+<!-- Sub Popup for Door Access Service Details -->
+<div id="doorAccessPopup" class="sub-popup">
+    <div class="sub-popup-content">
+        <h3>Door Access</h3>
+        <p>We offer advanced door access control systems for secure and efficient entry management.</p>
+        <button class="close-btn" onclick="closeSubPopup()">Close</button>
+    </div>
+</div>
+
+<!-- Sub Popup for Bio-Metric Service Details -->
+<div id="bioMetricPopup" class="sub-popup">
+    <div class="sub-popup-content">
+        <h3>Bio-Metric</h3>
+        <p>We provide biometric authentication solutions, including fingerprint and facial recognition for secure access.</p>
+        <button class="close-btn" onclick="closeSubPopup()">Close</button>
+    </div>
+</div>
+
+<!-- Sub Popup for VOIP Service Details -->
+<div id="voipPopup" class="sub-popup">
+    <div class="sub-popup-content">
+        <h3>VOIP</h3>
+        <p>Our VOIP solutions ensure high-quality, cost-effective communication for your business and home.</p>
+        <button class="close-btn" onclick="closeSubPopup()">Close</button>
+    </div>
+</div>
+
+<!-- Data Storage Backup Popup with Background and Buttons -->
+<div id="dataStoragePopup" class="sub-popup">
+    <div class="sub-popup-content">
+        <h3>Select a Data Storage Service</h3>
+        <div class="network-service-buttons">
+            <button class="network-service-btn" onclick="showDataStorageServiceDetails('deviceBackup')">All Device Backup</button>
+            <button class="network-service-btn" onclick="showDataStorageServiceDetails('cloudStorage')">All Device Storage in Cloud</button>
+            <button class="network-service-btn" onclick="showDataStorageServiceDetails('dataTransfer')">Data Transfer</button>
+        </div>
+        <button class="close-btn" onclick="closeDataStoragePopup()">Close</button>
+    </div>
+</div>
+
+<!-- Sub Popup for All Device Backup Service Details -->
+<div id="deviceBackupPopup" class="sub-popup">
+    <div class="sub-popup-content">
+        <h3>All Device Backup</h3>
+        <p>We provide reliable and secure backup solutions for all devices, ensuring your data is protected and easily recoverable.</p>
+        <button class="close-btn" onclick="closeSubPopup()">Close</button>
+    </div>
+</div>
+
+<!-- Sub Popup for Cloud Storage Service Details -->
+<div id="cloudStoragePopup" class="sub-popup">
+    <div class="sub-popup-content">
+        <h3>All Device Storage in Cloud</h3>
+        <p>Store your data safely and securely in the cloud, accessible anytime from any device with our cloud storage solutions.</p>
+        <button class="close-btn" onclick="closeSubPopup()">Close</button>
+    </div>
+</div>
+
+<!-- Sub Popup for Data Transfer Service Details -->
+<div id="dataTransferPopup" class="sub-popup">
+    <div class="sub-popup-content">
+        <h3>Data Transfer</h3>
+        <p>We offer secure and fast data transfer services to help you move large amounts of data with ease and confidence.</p>
+        <button class="close-btn" onclick="closeSubPopup()">Close</button>
+    </div>
+</div>
+
+<footer>
+    <p>&copy; 2024 Intelligent Infrastructure Zone | All Rights Reserved</p>
+</footer>
+
+<script>
+    // Show initial service popup
+    function showPopup(service) {
+        let title, description;
+
+        if (service === 'desktopSupport') {
+            title = "Desktop & Laptop Support";
+            description = "We offer expert OS installations, system upgrades, repairs, antivirus protection, malware removal, and data recovery for desktops and laptops. Our affordable, fast, and reliable services ensure your devices run smoothly and securely.";
+        } else if (service === 'cctvInstallation') {
+            title = "CCTV Installation";
+            description = "We specialize in professional CCTV installation, providing high-quality security solutions for homes and businesses.";
+        } else if (service === 'Access') {
+            title = "Access";
+            description = "We provide advanced door access control systems to ensure security and efficiency.";
+        }
+
+        document.getElementById("popupTitle").innerText = title;
+        document.getElementById("popupDescription").innerText = description;
+        document.getElementById("popup").style.display = "flex";
+    }
+
+    // Show Network support popup with options
+    function showNetworkPopup() {
+        document.getElementById("networkPopup").style.display = "flex";
+    }
+
+    // Show network service details in sub-popup
+    function showNetworkServiceDetails(service) {
+        let title, description;
+
+        if (service === 'switch') {
+            title = "Switch Setup";
+            description = "We provide professional switch setup to ensure optimal network performance and connectivity.";
+        } else if (service === 'firewall') {
+            title = "Firewall Configuration";
+            description = "We offer firewall configuration to enhance the security of your network and protect against external threats.";
+        } else if (service === 'ap') {
+            title = "WIFI Unifi AP Instalation";
+            description = "We provide expert Unifi Access Point installation and configuration for seamless, secure, and efficient network management.";
+        } else if (service === 'server') {
+            title = "Server Management";
+            description = "Our server management services ensure that your business's IT infrastructure runs efficiently and securely.";
+        } else if (service === 'lanCable') {
+            title = "LAN Cable Routing";
+            description = "We provide professional LAN cable routing to ensure efficient and organized network setups.";
+        } else if (service === 'printer') {
+            title = "Printer Integration";
+            description = "We offer expert printer integration and troubleshooting for your network's printing needs.";
+        }
+
+        document.getElementById("subPopupTitle").innerText = title;
+        document.getElementById("subPopupDescription").innerText = description;
+        document.getElementById("subPopup").style.display = "flex";
+    }
+
+    // Close all popups
+    function closePopup() {
+        document.getElementById("popup").style.display = "none";
+    }
+    function closeNetworkPopup() {
+        document.getElementById("networkPopup").style.display = "none";
+    }
+    function closeSubPopup() {
+        document.getElementById("subPopup").style.display = "none";
+    }
+
+    // Show Cybersecurity Popup with Buttons
+    function showCyberSecurityPopup() {
+        document.getElementById("cybersecurityPopup").style.display = "flex";
+    }
+
+    // Close Cybersecurity Popup
+    function closeCyberSecurityPopup() {
+        document.getElementById("cybersecurityPopup").style.display = "none";
+    }
+
+    // Show Cybersecurity Service Details in Sub Popup
+    function showCyberSecurityServiceDetails(service) {
+        document.getElementById(service + "Popup").style.display = "flex";
+    }
+
+    // Close Sub Popups
+    function closeSubPopup() {
+        var subPopups = document.querySelectorAll('.sub-popup');
+        subPopups.forEach(popup => popup.style.display = 'none');
+    }
+
+    // Show Access Popup with Buttons
+    function showAccessPopup() {
+        document.getElementById("accessPopup").style.display = "flex";
+    }
+
+    // Close Access Popup
+    function closeAccessPopup() {
+        document.getElementById("accessPopup").style.display = "none";
+    }
+
+    // Show Access Service Details in Sub Popup
+    function showAccessServiceDetails(service) {
+        document.getElementById(service + "Popup").style.display = "flex";
+    }
+
+    // Close Sub Popups
+    function closeSubPopup() {
+        var subPopups = document.querySelectorAll('.sub-popup');
+        subPopups.forEach(popup => popup.style.display = 'none');
+    }
+
+    // Show Data Storage Popup with Buttons
+    function showDataStoragePopup() {
+        document.getElementById("dataStoragePopup").style.display = "flex";
+    }
+
+    // Close Data Storage Popup
+    function closeDataStoragePopup() {
+        document.getElementById("dataStoragePopup").style.display = "none";
+    }
+
+    // Show Data Storage Service Details in Sub Popup
+    function showDataStorageServiceDetails(service) {
+        document.getElementById(service + "Popup").style.display = "flex";
+    }
+
+    // Close Sub Popups
+    function closeSubPopup() {
+        var subPopups = document.querySelectorAll('.sub-popup');
+        subPopups.forEach(popup => popup.style.display = 'none');
+    }
+
+
+</script>
+
+</body>
+</html>
