@@ -44,8 +44,8 @@ body {
 }
 
 .header img {
-  width: 260px;
-  height: 260px;
+  width: 300px;
+  height: 300px;
   border-radius: 50%;
   border: 3px solid var(--neon);
   box-shadow: var(--shadow);
@@ -295,3 +295,4 @@ footer {
     height: 20px !important;
   }
 }
+
