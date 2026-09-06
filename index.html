@@ -55,21 +55,39 @@
             <div class="id-meta">
               <span class="dot dot-blue pulse"></span> ACTIVE &middot; Chennai, TN
             </div>
+            <div class="id-stats">
+              <div class="id-stat">
+                <span class="id-stat-value">1+ yr</span>
+                <span class="id-stat-label">SOC experience</span>
+              </div>
+              <div class="id-stat">
+                <span class="id-stat-value">6</span>
+                <span class="id-stat-label">Certifications</span>
+              </div>
+              <div class="id-stat">
+                <span class="id-stat-value">17</span>
+                <span class="id-stat-label">Tools used</span>
+              </div>
+              <div class="id-stat">
+                <span class="id-stat-value">&euro;75</span>
+                <span class="id-stat-label">Bounty earned</span>
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </header>
 
     <!-- ============ NAV ============ -->
-    <nav class="tabs" aria-label="Portfolio sections">
-      <button class="tab-btn active" data-tab="about" type="button">About</button>
-      <button class="tab-btn" data-tab="skills" type="button">Skills</button>
-      <button class="tab-btn" data-tab="tools" type="button">Tools</button>
-      <button class="tab-btn" data-tab="certifications" type="button">Certifications</button>
-      <button class="tab-btn" data-tab="projects" type="button">Projects</button>
-      <button class="tab-btn" data-tab="experience" type="button">Experience</button>
-      <button class="tab-btn" data-tab="education" type="button">Education</button>
-      <button class="tab-btn" data-tab="achievements" type="button">Achievements</button>
+    <nav class="tabs" aria-label="Portfolio sections" role="tablist">
+      <button class="tab-btn active" data-tab="about" type="button" role="tab" aria-selected="true">About</button>
+      <button class="tab-btn" data-tab="skills" type="button" role="tab" aria-selected="false">Skills</button>
+      <button class="tab-btn" data-tab="tools" type="button" role="tab" aria-selected="false">Tools</button>
+      <button class="tab-btn" data-tab="certifications" type="button" role="tab" aria-selected="false">Certifications</button>
+      <button class="tab-btn" data-tab="projects" type="button" role="tab" aria-selected="false">Projects</button>
+      <button class="tab-btn" data-tab="experience" type="button" role="tab" aria-selected="false">Experience</button>
+      <button class="tab-btn" data-tab="education" type="button" role="tab" aria-selected="false">Education</button>
+      <button class="tab-btn" data-tab="achievements" type="button" role="tab" aria-selected="false">Achievements</button>
     </nav>
 
     <!-- ============ PANELS ============ -->
@@ -82,39 +100,43 @@
           <span class="meta"><span class="dot dot-blue"></span>summary</span>
         </div>
         <div class="panel-body">
-          <p>
-            Network Security-focused professional with hands-on experience in SOC operations, endpoint detection
-            and response (CrowdStrike Falcon EDR), SIEM monitoring, and network security administration. Skilled
-            in security alert triage, log analysis, firewall management, and incident response, with a solid
-            foundation in threat detection, network monitoring, and vulnerability assessment built through daily
-            SOC work and self-directed labs.
-          </p>
+          <div class="about-grid">
+            <div class="about-main">
+              <p>
+                Network Security-focused professional with hands-on experience in SOC operations, endpoint
+                detection and response (CrowdStrike Falcon EDR), SIEM monitoring, and network security
+                administration. Skilled in security alert triage, log analysis, firewall management, and incident
+                response, with a solid foundation in threat detection, network monitoring, and vulnerability
+                assessment built through daily SOC work and self-directed labs.
+              </p>
 
-          <div class="fact-strip">
-            <div class="fact">
-              <span class="fact-label">Location</span>
-              <span class="fact-value">Chennai, Tamil Nadu</span>
+              <p class="tag-row-label">Working style</p>
+              <div class="tag-row">
+                <span class="soft-tag">Problem Solving</span>
+                <span class="soft-tag">Curiosity &amp; Continuous Learning</span>
+                <span class="soft-tag">Adaptability</span>
+                <span class="soft-tag">Attention to Detail</span>
+              </div>
             </div>
-            <div class="fact">
-              <span class="fact-label">Current role</span>
-              <span class="fact-value">Network Security Analyst</span>
-            </div>
-            <div class="fact">
-              <span class="fact-label">Certified</span>
-              <span class="fact-value">SOC L1 &middot; CCNA &middot; EHE</span>
-            </div>
-            <div class="fact">
-              <span class="fact-label">Target roles</span>
-              <span class="fact-value">SOC Analyst &middot; SecOps Engineer</span>
-            </div>
-          </div>
 
-          <p class="tag-row-label">Working style</p>
-          <div class="tag-row">
-            <span class="soft-tag">Problem Solving</span>
-            <span class="soft-tag">Curiosity &amp; Continuous Learning</span>
-            <span class="soft-tag">Adaptability</span>
-            <span class="soft-tag">Attention to Detail</span>
+            <aside class="about-rail">
+              <div class="fact">
+                <span class="fact-label">Location</span>
+                <span class="fact-value">Chennai, Tamil Nadu</span>
+              </div>
+              <div class="fact">
+                <span class="fact-label">Current role</span>
+                <span class="fact-value">Network Security Analyst</span>
+              </div>
+              <div class="fact">
+                <span class="fact-label">Certified</span>
+                <span class="fact-value">SOC L1 &middot; CCNA &middot; EHE</span>
+              </div>
+              <div class="fact">
+                <span class="fact-label">Target roles</span>
+                <span class="fact-value">SOC Analyst &middot; SecOps Engineer</span>
+              </div>
+            </aside>
           </div>
         </div>
       </section>
@@ -126,50 +148,52 @@
           <span class="meta"><span class="dot dot-blue"></span>19 entries</span>
         </div>
         <div class="panel-body">
+          <div class="skill-grid">
 
-          <div class="skill-group">
-            <h3><span class="dot dot-blue"></span>SOC &amp; Security Monitoring</h3>
-            <ul class="chip-row">
-              <li class="chip chip-blue">SOC Alert Triage</li>
-              <li class="chip chip-blue">SIEM Monitoring</li>
-              <li class="chip chip-blue">Endpoint Detection &amp; Response (EDR)</li>
-              <li class="chip chip-blue">Incident Response</li>
-              <li class="chip chip-blue">Log Analysis</li>
-              <li class="chip chip-blue">Threat Detection</li>
-              <li class="chip chip-blue">Vulnerability Assessment</li>
-            </ul>
+            <div class="skill-group">
+              <h3><span class="dot dot-blue"></span>SOC &amp; Security Monitoring</h3>
+              <ul class="chip-row">
+                <li class="chip chip-blue">SOC Alert Triage</li>
+                <li class="chip chip-blue">SIEM Monitoring</li>
+                <li class="chip chip-blue">Endpoint Detection &amp; Response (EDR)</li>
+                <li class="chip chip-blue">Incident Response</li>
+                <li class="chip chip-blue">Log Analysis</li>
+                <li class="chip chip-blue">Threat Detection</li>
+                <li class="chip chip-blue">Vulnerability Assessment</li>
+              </ul>
+            </div>
+
+            <div class="skill-group">
+              <h3><span class="dot dot-amber"></span>Network Security</h3>
+              <ul class="chip-row">
+                <li class="chip chip-amber">Firewall Administration</li>
+                <li class="chip chip-amber">IDS / IPS</li>
+                <li class="chip chip-amber">VLAN Configuration</li>
+                <li class="chip chip-amber">Routing &amp; Switching</li>
+                <li class="chip chip-amber">IP Addressing &amp; Subnetting</li>
+                <li class="chip chip-amber">Wireless Network Security</li>
+              </ul>
+            </div>
+
+            <div class="skill-group">
+              <h3><span class="dot dot-purple"></span>Systems &amp; Administration</h3>
+              <ul class="chip-row">
+                <li class="chip chip-purple">Windows Server (AD, DNS, DHCP)</li>
+                <li class="chip chip-purple">Linux Administration</li>
+                <li class="chip chip-purple">VMware ESXi</li>
+                <li class="chip chip-purple">NAS Storage Administration</li>
+              </ul>
+            </div>
+
+            <div class="skill-group">
+              <h3><span class="dot dot-red"></span>Application &amp; Web Security</h3>
+              <ul class="chip-row">
+                <li class="chip chip-red">Web Penetration Testing</li>
+                <li class="chip chip-red">Bug Hunting</li>
+              </ul>
+            </div>
+
           </div>
-
-          <div class="skill-group">
-            <h3><span class="dot dot-amber"></span>Network Security</h3>
-            <ul class="chip-row">
-              <li class="chip chip-amber">Firewall Administration</li>
-              <li class="chip chip-amber">IDS / IPS</li>
-              <li class="chip chip-amber">VLAN Configuration</li>
-              <li class="chip chip-amber">Routing &amp; Switching</li>
-              <li class="chip chip-amber">IP Addressing &amp; Subnetting</li>
-              <li class="chip chip-amber">Wireless Network Security</li>
-            </ul>
-          </div>
-
-          <div class="skill-group">
-            <h3><span class="dot dot-purple"></span>Systems &amp; Administration</h3>
-            <ul class="chip-row">
-              <li class="chip chip-purple">Windows Server (AD, DNS, DHCP)</li>
-              <li class="chip chip-purple">Linux Administration</li>
-              <li class="chip chip-purple">VMware ESXi</li>
-              <li class="chip chip-purple">NAS Storage Administration</li>
-            </ul>
-          </div>
-
-          <div class="skill-group">
-            <h3><span class="dot dot-red"></span>Application &amp; Web Security</h3>
-            <ul class="chip-row">
-              <li class="chip chip-red">Web Penetration Testing</li>
-              <li class="chip chip-red">Bug Hunting</li>
-            </ul>
-          </div>
-
         </div>
       </section>
 
@@ -180,48 +204,50 @@
           <span class="meta"><span class="dot dot-blue"></span>17 entries</span>
         </div>
         <div class="panel-body">
+          <div class="skill-grid">
 
-          <div class="skill-group">
-            <h3><span class="dot dot-blue"></span>SIEM &amp; EDR</h3>
-            <ul class="chip-row">
-              <li class="chip chip-blue">CrowdStrike Falcon EDR</li>
-              <li class="chip chip-blue">Falcon Next-Gen SIEM</li>
-              <li class="chip chip-blue">Wazuh</li>
-              <li class="chip chip-blue">Splunk</li>
-              <li class="chip chip-blue">Microsoft Azure Sentinel</li>
-            </ul>
+            <div class="skill-group">
+              <h3><span class="dot dot-blue"></span>SIEM &amp; EDR</h3>
+              <ul class="chip-row">
+                <li class="chip chip-blue">CrowdStrike Falcon EDR</li>
+                <li class="chip chip-blue">Falcon Next-Gen SIEM</li>
+                <li class="chip chip-blue">Wazuh</li>
+                <li class="chip chip-blue">Splunk</li>
+                <li class="chip chip-blue">Microsoft Azure Sentinel</li>
+              </ul>
+            </div>
+
+            <div class="skill-group">
+              <h3><span class="dot dot-amber"></span>Network &amp; Infrastructure</h3>
+              <ul class="chip-row">
+                <li class="chip chip-amber">Zabbix NMS</li>
+                <li class="chip chip-amber">Fortigate</li>
+                <li class="chip chip-amber">Netgear</li>
+                <li class="chip chip-amber">UniFi Controller</li>
+                <li class="chip chip-amber">VMware ESXi</li>
+              </ul>
+            </div>
+
+            <div class="skill-group">
+              <h3><span class="dot dot-red"></span>Offensive &amp; Diagnostic Tools</h3>
+              <ul class="chip-row">
+                <li class="chip chip-red">Wireshark</li>
+                <li class="chip chip-red">Nmap</li>
+                <li class="chip chip-red">Metasploit</li>
+                <li class="chip chip-red">Burp Suite</li>
+                <li class="chip chip-red">Snort</li>
+                <li class="chip chip-red">Virus Total</li>
+              </ul>
+            </div>
+
+            <div class="skill-group">
+              <h3><span class="dot dot-purple"></span>Endpoint Protection</h3>
+              <ul class="chip-row">
+                <li class="chip chip-purple">ESET</li>
+              </ul>
+            </div>
+
           </div>
-
-          <div class="skill-group">
-            <h3><span class="dot dot-amber"></span>Network &amp; Infrastructure</h3>
-            <ul class="chip-row">
-              <li class="chip chip-amber">Zabbix NMS</li>
-              <li class="chip chip-amber">Fortigate</li>
-              <li class="chip chip-amber">Netgear</li>
-              <li class="chip chip-amber">UniFi Controller</li>
-              <li class="chip chip-amber">VMware ESXi</li>
-            </ul>
-          </div>
-
-          <div class="skill-group">
-            <h3><span class="dot dot-red"></span>Offensive &amp; Diagnostic Tools</h3>
-            <ul class="chip-row">
-              <li class="chip chip-red">Wireshark</li>
-              <li class="chip chip-red">Nmap</li>
-              <li class="chip chip-red">Metasploit</li>
-              <li class="chip chip-red">Burp Suite</li>
-              <li class="chip chip-red">Snort</li>
-              <li class="chip chip-red">Virus Total</li>
-            </ul>
-          </div>
-
-          <div class="skill-group">
-            <h3><span class="dot dot-purple"></span>Endpoint Protection</h3>
-            <ul class="chip-row">
-              <li class="chip chip-purple">ESET</li>
-            </ul>
-          </div>
-
         </div>
       </section>
 
@@ -351,35 +377,60 @@
           <span class="meta"><span class="dot dot-blue pulse"></span>1 active role</span>
         </div>
         <div class="panel-body">
-          <div class="job">
-            <div class="job-head">
-              <div>
-                <h3>Network Security Analyst</h3>
-                <p class="job-org">Dr. Mehta&rsquo;s Multispeciality Hospitals &middot; Chennai, Tamil Nadu</p>
+          <div class="exp-grid">
+            <div class="exp-main">
+              <div class="job-head">
+                <div>
+                  <h3>Network Security Analyst</h3>
+                  <p class="job-org">Dr. Mehta&rsquo;s Multispeciality Hospitals &middot; Chennai, Tamil Nadu</p>
+                </div>
+                <span class="job-dates">Sep 2024 &ndash; Present</span>
               </div>
-              <span class="job-dates">Sep 2024 &ndash; Present</span>
+              <ul class="job-bullets">
+                <li>Monitored and triaged security alerts using CrowdStrike Falcon EDR for endpoint protection
+                  and incident response, with operational exposure to Falcon Next-Gen SIEM for security
+                  investigation and support.</li>
+                <li>Administered Zabbix NMS with custom dashboards and alerts, enabling proactive monitoring of
+                  servers and network devices.</li>
+                <li>Managed firewall operations including policy configuration, rule audits, traffic monitoring,
+                  and performance tuning to maintain secure and reliable network operations.</li>
+                <li>Administered UniFi AP Controller, performing health monitoring, troubleshooting, and
+                  configuration backups for wireless network infrastructure.</li>
+                <li>Provided LAN and switch support through VLAN setup and port management; managed L2 and L3
+                  (core) switches to ensure stable network performance.</li>
+                <li>Administered Windows servers (DHCP, DNS, Active Directory) and NAS storage systems, managing
+                  storage allocation, permissions, and user access.</li>
+                <li>Managed VMware ESXi servers, including provisioning and configuration of virtual machines to
+                  support business operations.</li>
+                <li>Tracked and resolved network and security issues using the SHIVAM ticketing tool, ensuring
+                  timely incident management and service continuity.</li>
+                <li>Supported ISO 27001 compliance activities related to security policies, access control, and
+                  audit readiness.</li>
+              </ul>
             </div>
-            <ul class="job-bullets">
-              <li>Monitored and triaged security alerts using CrowdStrike Falcon EDR for endpoint protection and
-                incident response, with operational exposure to Falcon Next-Gen SIEM for security investigation and
-                support.</li>
-              <li>Administered Zabbix NMS with custom dashboards and alerts, enabling proactive monitoring of
-                servers and network devices.</li>
-              <li>Managed firewall operations including policy configuration, rule audits, traffic monitoring, and
-                performance tuning to maintain secure and reliable network operations.</li>
-              <li>Administered UniFi AP Controller, performing health monitoring, troubleshooting, and configuration
-                backups for wireless network infrastructure.</li>
-              <li>Provided LAN and switch support through VLAN setup and port management; managed L2 and L3 (core)
-                switches to ensure stable network performance.</li>
-              <li>Administered Windows servers (DHCP, DNS, Active Directory) and NAS storage systems, managing
-                storage allocation, permissions, and user access.</li>
-              <li>Managed VMware ESXi servers, including provisioning and configuration of virtual machines to
-                support business operations.</li>
-              <li>Tracked and resolved network and security issues using the SHIVAM ticketing tool, ensuring timely
-                incident management and service continuity.</li>
-              <li>Supported ISO 27001 compliance activities related to security policies, access control, and audit
-                readiness.</li>
-            </ul>
+
+            <aside class="exp-rail">
+              <div class="fact">
+                <span class="fact-label">Employer</span>
+                <span class="fact-value">Dr. Mehta&rsquo;s Multispeciality Hospitals</span>
+              </div>
+              <div class="fact">
+                <span class="fact-label">Location</span>
+                <span class="fact-value">Chennai, Tamil Nadu</span>
+              </div>
+              <div class="fact">
+                <span class="fact-label">Duration</span>
+                <span class="fact-value">Sep 2024 &ndash; Present</span>
+              </div>
+              <div class="fact">
+                <span class="fact-label">Ticketing tool</span>
+                <span class="fact-value">SHIVAM</span>
+              </div>
+              <div class="fact">
+                <span class="fact-label">Compliance</span>
+                <span class="fact-value">ISO 27001 support</span>
+              </div>
+            </aside>
           </div>
         </div>
       </section>
@@ -424,20 +475,37 @@
           <span class="meta"><span class="dot dot-amber"></span>1 disclosure</span>
         </div>
         <div class="panel-body">
-          <div class="disclosure-card">
-            <div class="disclosure-head">
-              <h3><i class="fa-solid fa-bug"></i> Broken Link Hijacking &mdash; Moonpig Group Cards (Pinterest)</h3>
-              <span class="severity severity-medium">Medium</span>
+          <div class="ach-grid">
+            <div class="disclosure-card">
+              <div class="disclosure-head">
+                <h3><i class="fa-solid fa-bug"></i> Broken Link Hijacking &mdash; Moonpig Group Cards (Pinterest)</h3>
+                <span class="severity severity-medium">Medium</span>
+              </div>
+              <div class="disclosure-grid">
+                <div><span class="fact-label">Target</span><span class="fact-value">Moonpig Group &mdash; web application</span></div>
+                <div><span class="fact-label">Bounty</span><span class="fact-value">&euro;75</span></div>
+                <div><span class="fact-label">Type</span><span class="fact-value">Improper Authorization / BLH</span></div>
+                <div><span class="fact-label">Status</span><span class="fact-value">Resolved</span></div>
+              </div>
+              <p>Identified a broken link hijacking vulnerability in Moonpig Group&rsquo;s Cards platform that
+                could have allowed attackers to hijack external links, potentially leading to account or content
+                misuse. Reported responsibly, enabling the security team to patch the issue promptly.</p>
             </div>
-            <div class="disclosure-grid">
-              <div><span class="fact-label">Target</span><span class="fact-value">Moonpig Group &mdash; web application</span></div>
-              <div><span class="fact-label">Bounty</span><span class="fact-value">&euro;75</span></div>
-              <div><span class="fact-label">Type</span><span class="fact-value">Improper Authorization / Broken Link Hijacking (BLH)</span></div>
-              <div><span class="fact-label">Status</span><span class="fact-value">Resolved</span></div>
-            </div>
-            <p>Identified a broken link hijacking vulnerability in Moonpig Group&rsquo;s Cards platform that could
-              have allowed attackers to hijack external links, potentially leading to account or content misuse.
-              Reported responsibly, enabling the security team to patch the issue promptly.</p>
+
+            <aside class="about-rail">
+              <div class="fact">
+                <span class="fact-label">Platform</span>
+                <span class="fact-value">Intigriti</span>
+              </div>
+              <div class="fact">
+                <span class="fact-label">Researcher handle</span>
+                <span class="fact-value">debugger_88</span>
+              </div>
+              <div class="fact">
+                <span class="fact-label">Disclosure type</span>
+                <span class="fact-value">Responsible disclosure</span>
+              </div>
+            </aside>
           </div>
         </div>
       </section>
@@ -489,11 +557,16 @@
         btn.addEventListener('click', function () {
           var target = btn.getAttribute('data-tab');
 
-          buttons.forEach(function (b) { b.classList.remove('active'); });
+          buttons.forEach(function (b) {
+            b.classList.remove('active');
+            b.setAttribute('aria-selected', 'false');
+          });
           panels.forEach(function (p) { p.classList.remove('active'); });
 
           btn.classList.add('active');
+          btn.setAttribute('aria-selected', 'true');
           document.getElementById(target).classList.add('active');
+          btn.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
         });
       });
     })();
